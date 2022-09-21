@@ -10,7 +10,12 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: index.tex
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Commit pdf to Repository
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: automatically generated output
           file_pattern: '*.pdf'
+# Alternatives to the commit include:
+# - publishing to github pages
+# - pushing an artifact (zip-file)
+# getting it from the build
